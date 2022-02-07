@@ -12,7 +12,7 @@ from PIL import Image
 mp_drawing = mp.solutions.drawing_utils
 mp_face_mesh = mp.solutions.face_mesh
 
-DEMO_VIDEO = 'demo.m4v'
+DEMO_VIDEO = 'og demo.mp4'
 DEMO_IMAGE = 'demo.jpg'
 
 st.title('Face Mesh Application using MediaPipe \n **by Simon Mudimu**')
