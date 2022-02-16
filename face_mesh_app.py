@@ -1,6 +1,4 @@
-# Modified by Augmented Startups 2021
-# Face Landmark User Interface with StreamLit
-# Watch Computer Vision Tutorials at www.augmentedstartups.info/YouTube
+# Created by Simon Mudimu
 import streamlit as st
 import mediapipe as mp
 import cv2
@@ -162,7 +160,7 @@ elif app_mode == 'Run on Video':
     i = 0
     drawing_spec = mp_drawing.DrawingSpec(thickness=1, circle_radius=1)
 
-    kpi1, kpi2, kpi3 = st.beta_columns(3)
+    kpi1, kpi2, kpi3 = st.columns(3)
 
     with kpi1:
         st.markdown("**FrameRate**")
@@ -203,7 +201,7 @@ elif app_mode == 'Run on Video':
                     mp_drawing.draw_landmarks(
                         image=frame,
                         landmark_list=face_landmarks,
-                        connections=mp_face_mesh.FACE_CONNECTIONS,
+                        connections=mp_face_mesh.FACEMESH_CONTOURS,
                         landmark_drawing_spec=drawing_spec,
                         connection_drawing_spec=drawing_spec)
             currTime = time.time()
@@ -288,10 +286,10 @@ elif app_mode == 'Run on Image':
             mp_drawing.draw_landmarks(
                 image=out_image,
                 landmark_list=face_landmarks,
-                connections=mp_face_mesh.FACE_CONNECTIONS,
+                connections = mp_face_mesh.FACEMESH_CONTOURS,
                 landmark_drawing_spec=drawing_spec,
                 connection_drawing_spec=drawing_spec)
             kpi1_text.write(f"<h1 style='text-align: center; color: red;'>{face_count}</h1>", unsafe_allow_html=True)
         st.subheader('Output Image')
         st.image(out_image, use_column_width=True)
-# Watch Tutorial at www.augmentedstartups.info/YouTube
+
